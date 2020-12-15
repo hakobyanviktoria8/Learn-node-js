@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="input" type="text" placeholder="search">
+<button id="btn">Search</button>
+<div id="result"></div>
+<script>
+    btn.onclick= () => {
+        let input = input.value;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial`;
+        fetch(url)
+            .then(response => response.json())
+            .then(results =>
+                result.innerHTML +=
+                    `
+                <div>
+                    <h2>${results.name}</h2>
+                    <p>clouds ${results.clouds.all}</p>
+                </div>
+                `
+            )
+    }
+</script>
+</body>
+</html>
