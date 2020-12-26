@@ -86,29 +86,61 @@
 // }
 // outerFunction('hello closure!');
 
-
-function outerFunction(arg) {
-    var variableInOuterFunction = arg;
-    return function () {
-        console.log(variableInOuterFunction);
-    }
-}
-outerFunction('hello closure!')();
+//
+// function outerFunction(arg) {
+//     var variableInOuterFunction = arg;
+//     return function () {
+//         console.log(variableInOuterFunction);
+//     }
+// }
+// outerFunction('hello closure!')();
 // console.log("hi");
 // Note the outerFunction has returned
 // innerFunction(); // logs hello closure!
 
-function f(a) {
-    return function (){
-        console.log(a)
-    }
+// function f(a) {
+//     return function (){
+//         console.log(a)
+//     }
+// }
+// f("a")();
+
+
+
+//
+// function longRunningOperation(callback) {
+//     // simulate a 3 second operation
+//     setTimeout(callback, 3000);
+// }
+// function userClicked() {
+//     console.log('starting a long operation');
+//     longRunningOperation(function () {
+//         console.log('ending a long operation in 3min');
+//     });
+// }
+// // simulate a user action
+// userClicked();
+
+
+
+
+
+
+
+function longRunningOperation(callback) {
+    // simulate a 3 second operation
+    setTimeout(callback, 3000);
 }
-f("a")();
-
-
-
-
-
+function webRequest(request) {
+    console.log('starting a long operation for request:', request.id);
+    longRunningOperation(function () {
+        console.log('ending a long operation for request:', request.id);
+    });
+}
+// simulate a web request
+webRequest({ id: 1 });
+// simulate a second web request
+webRequest({ id: 2 });
 
 
 
