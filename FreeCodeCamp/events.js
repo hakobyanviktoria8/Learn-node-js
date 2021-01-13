@@ -8,14 +8,14 @@
 const EventEmitter = require("events");
 const evem = new  EventEmitter();
 
-evem.on("sum",(a,v)=>{
-    console.log("Sum " + a+v)
-});
-evem.emit("sum",1,2);
-
-//multiply
-evem.on("mult",(a,b)=>console.log("Multi " + a*b));
-evem.emit("mult",1,2);
+// evem.on("sum",(a,v)=>{
+//     console.log("Sum is ", a+v)
+// });
+// evem.emit("sum",1,2);
+//
+// //multiply
+// evem.on("mult",(a,b)=>console.log("Multi " + a*b));
+// evem.emit("mult",1,2);
 
 //class
 class Person extends EventEmitter{

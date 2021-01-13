@@ -18,7 +18,5 @@ console.log(example.exam());
 
 
 
-
-
 // const fs = require("fs");
 // fs.writeFileSync("hi.txt", "Hello from Node.js");
