@@ -34,12 +34,12 @@ const readStream = fs.createReadStream("input.txt", {
     highWaterMark: 3 //kkarda 3 hat
 });
 //grel streamov text output-um
-const writeStream = fs.createWriteStream("output.txt");
+const writeStream = fs.createWriteStream("output1.txt");
 
-// readStream.on("data",function (chunk) {
-//     // writeStream.write(chunk.toString().toUpperCase())
-//     writeStream.write(chunk)
-// });
+readStream.on("data",function (chunk) {
+    // writeStream.write(chunk.toString().toUpperCase())
+    writeStream.write(chunk)
+});
 
 // readStream.pipe(writeStream);
 
